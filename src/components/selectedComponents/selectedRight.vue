@@ -4,18 +4,11 @@
   </div>
 </template>
 
-<script>
-import {ref} from 'vue'
-
-export default {
-  setup() {
-    const data = ref('Jacket')
-
-    return {
-      data
-    }
-  }
-  }
+<script setup>
+import { defineProps } from 'vue';
+defineProps({
+  data: String,
+});
 </script>
 
 <style scoped>

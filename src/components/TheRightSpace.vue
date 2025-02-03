@@ -1,9 +1,14 @@
 <template>
   <div>
-    <selectedRight class="selected" />
+    <selectedRight :data="choosedItem" class="selected" />
     <div class="components">
       <ul class="list">
-        <li class="list-item" v-for="item in dataRight" :key="item.id">
+        <li
+          @click="$emit('chooseItem', item.id)"
+          class="list-item"
+          v-for="item in dataRight"
+          :key="item.id"
+        >
           <h3>{{ item.name }}</h3>
         </li>
       </ul>
@@ -11,14 +16,13 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import selectedRight from './selectedComponents/selectedRight.vue';
+import { defineProps, defineEmits } from 'vue';
 
-export default {
-  components: {selectedRight},
-  props: ["dataRight"],
-  setup() {
-    return {};
-  },
-};
+defineProps({
+  dataRight: Array,
+  choosedItem: String,
+});
+defineEmits('chooseItem');
 </script>

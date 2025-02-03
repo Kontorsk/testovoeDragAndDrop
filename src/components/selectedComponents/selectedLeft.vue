@@ -1,23 +1,16 @@
 <template>
   <div>
     <ul class="list">
-        <li class="list-selected" v-for="item in data" :key="item.id">
-          <div v-if="item.visible" class="list-item">
-            <h3>{{ item.name }}</h3>
-          </div>
-        </li>
-      </ul>
+      <li class="list-item" v-for="item in data" :key="item.id">
+        <h3>{{ item.name }}</h3>
+      </li>
+    </ul>
   </div>
 </template>
 
-<script>
-export default {
-  props: ["data"],
-};
+<script setup>
+import { defineProps } from 'vue';
+defineProps({
+  data: Array,
+});
 </script>
-
-<style scoped>
-.list-selected {
-  display: inline-block;
-  }
-</style>
