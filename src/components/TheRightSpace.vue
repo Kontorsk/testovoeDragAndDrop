@@ -2,16 +2,13 @@
   <div>
     <selectedRight :data="choosedItem" class="selected" />
     <div class="components">
-      <ul class="list">
-        <li
-          @click="$emit('chooseItem', item.id)"
-          class="list-item"
-          v-for="item in dataRight"
-          :key="item.id"
-        >
-          <h3>{{ item.name }}</h3>
-        </li>
-      </ul>
+      <draggable :list="dataRight" tag="ul" group="data" class="list">
+        <template #item="item">
+          <li @click="$emit('chooseItem', item.element.id)" class="list-item">
+            <h3>{{ item.element.name }}</h3>
+          </li>
+        </template>
+      </draggable>
     </div>
   </div>
 </template>
@@ -19,6 +16,7 @@
 <script setup>
 import selectedRight from './selectedComponents/selectedRight.vue';
 import { defineProps, defineEmits } from 'vue';
+import draggable from 'vuedraggable';
 
 defineProps({
   dataRight: Array,
