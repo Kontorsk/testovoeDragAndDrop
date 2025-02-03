@@ -1,9 +1,9 @@
 <template>
   <div>
-    <selectedLeft class="selected" />
+    <selectedLeft :data="dataLeft" class="selected" />
     <div class="components">
       <ul class="list">
-        <li class="list-item" v-for="item in dataLeft" :key="item.id">
+        <li @click="$emit('changeVision', item.id)" class="list-item" v-for="item in dataLeft" :key="item.id">
           <h3>{{ item.name }}</h3>
         </li>
       </ul>
