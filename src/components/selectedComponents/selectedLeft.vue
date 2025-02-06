@@ -1,7 +1,11 @@
 <template>
   <div>
     <ul class="list">
-      <li v-for="item in data" :key="item.name" class="list-item">
+      <li
+        v-for="item in data"
+        :key="item.name"
+        class="list-item"
+      >
         <h3>{{ item.name }}</h3>
       </li>
     </ul>

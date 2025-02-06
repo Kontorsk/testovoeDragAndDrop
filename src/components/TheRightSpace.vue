@@ -1,10 +1,21 @@
 <template>
   <div>
-    <selectedRight :data="choosedItem" class="selected" />
+    <selectedRight
+      :data="choosedItem"
+      class="selected"
+    />
     <div class="components">
-      <draggable :list="dataRight" tag="ul" group="data" class="list">
+      <draggable
+        :list="dataRight"
+        tag="ul"
+        group="data"
+        class="list"
+      >
         <template #item="item">
-          <li @click="$emit('chooseItem', item.element.name)" class="list-item">
+          <li
+            @click="$emit('chooseItem', item.element.name)"
+            class="list-item"
+          >
             <h3>{{ item.element.name }}</h3>
           </li>
         </template>
