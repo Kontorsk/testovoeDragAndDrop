@@ -4,7 +4,7 @@
     <div class="components">
       <draggable :list="dataLeft" tag="ul" group="data" class="list">
         <template #item="item">
-          <li @click="$emit('selectItem', item.element.id)" class="list-item">
+          <li @click="$emit('selectItem', item.element.name)" class="list-item">
             <h3>{{ item.element.name }}</h3>
           </li>
         </template>
@@ -19,8 +19,14 @@ import { defineProps, defineEmits } from 'vue';
 import draggable from 'vuedraggable';
 
 defineProps({
-  dataLeft: Array,
-  selectedArray: Array,
+  dataLeft: {
+    type: Array,
+    required: true,
+  },
+  selectedArray: {
+    type: Array,
+    required: true,
+  },
 });
 defineEmits('selectItem');
 </script>

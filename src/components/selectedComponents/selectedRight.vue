@@ -6,8 +6,12 @@
 
 <script setup>
 import { defineProps } from 'vue';
+
 defineProps({
-  data: String,
+  data: {
+    type: String,
+    required: true,
+  },
 });
 </script>
 
