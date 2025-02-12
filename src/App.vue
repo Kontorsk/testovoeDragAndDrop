@@ -18,13 +18,13 @@ import { ref } from 'vue';
 import TheLeftSpace from './components/TheLeftSpace.vue';
 import TheRightSpace from './components/TheRightSpace.vue';
 
-const dataLeft = ref(fetchData('Shoes'));
-const dataRight = ref(fetchData('Jacket'));
+const dataLeft = ref(createData('Shoes'));
+const dataRight = ref(createData('Jacket'));
 
 const selectedArray = ref([]);
 const choosedItem = ref('');
 
-function fetchData(title) {
+function createData(title) {
   return Array.from({ length: 10 }, (_, i) => ({ name: `${title} ${++i}` }));
 }
 
