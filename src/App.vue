@@ -29,7 +29,7 @@ function createData(title) {
 }
 
 function selectItem(name) {
-  if (selectedArray.value.length > 6 || selectedArray.value.includes(name)) {
+  if (selectedArray.value.length >= 6 || selectedArray.value.includes(name)) {
     return;
   }
   dataLeft.value.forEach((element) => {
