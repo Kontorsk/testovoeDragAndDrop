@@ -26,7 +26,6 @@
 
 <script setup>
 import selectedRight from './selectedComponents/selectedRight.vue';
-import { defineProps, defineEmits } from 'vue';
 import draggable from 'vuedraggable';
 
 defineProps({
